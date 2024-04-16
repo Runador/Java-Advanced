@@ -8,6 +8,7 @@ public class DecimalToBinaryConverter {
         Scanner scanner = new Scanner(System.in);
 
         ArrayDeque<Integer> stack = new ArrayDeque<>();
+
         int number = Integer.parseInt(scanner.nextLine());
 
         if (number == 0) {
