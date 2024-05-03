@@ -9,8 +9,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         List<Person> people = new ArrayList<>();
+
         int n = Integer.parseInt(reader.readLine());
 
         for (int i = 0; i < n; i++) {
@@ -18,7 +21,9 @@ public class Main {
             Person person = new Person(input[0], input[1], Integer.parseInt(input[2]), Double.parseDouble(input[3]));
             people.add(person);
         }
+
         double bonus = Double.parseDouble(reader.readLine());
+
         for (Person person : people) {
             person.increaseSalary(bonus);
             System.out.println(person);
