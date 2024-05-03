@@ -1,13 +1,14 @@
 package LabEncapsulation.FirstAndReserveTeam;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Team {
 
     private String name;
-    private List<Player> firstTeam;
-    private List<Player> reverseTeam;
+    private List<Person> firstTeam;
+    private List<Person> reverseTeam;
 
     public String getName() {
         return this.name;
@@ -18,12 +19,12 @@ public class Team {
     }
 
     public Team(String name) {
-        this.name = name;
+        this.setName(name);
         firstTeam = new ArrayList<>();
         reverseTeam = new ArrayList<>();
     }
 
-    public void addPlayer(Player player) {  // добавляем игрока в зависимости от его возраста
+    public void addPlayer(Person player) {  // добавляем игрока в зависимости от его возраста
         if (player.getAge() < 40) {
             firstTeam.add(player);
         } else {
@@ -31,12 +32,12 @@ public class Team {
         }
     }
 
-    public List<Player> getFirstTeam() {
-        return firstTeam;
+    public List<Person> getFirstTeam() {
+        return Collections.unmodifiableList(this.firstTeam);
     }
 
-    public List<Player> getReverseTeam() {
-        return reverseTeam;
+    public List<Person> getReverseTeam() {
+        return Collections.unmodifiableList(this.reverseTeam);
     }
 
 }

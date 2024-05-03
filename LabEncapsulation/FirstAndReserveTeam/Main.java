@@ -14,7 +14,7 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             String[] tokens = reader.readLine().split("\\s+");
-            team.addPlayer(new Player(tokens[0], tokens[1],
+            team.addPlayer(new Person(tokens[0], tokens[1],
                     Integer.parseInt(tokens[2]), Double.parseDouble(tokens[3])));
         }
 

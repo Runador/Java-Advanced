@@ -1,4 +1,4 @@
-package LabEncapsulation.ValidationData;
+package LabEncapsulation.FirstAndReserveTeam;
 
 import java.text.DecimalFormat;
 
@@ -72,28 +72,8 @@ public class Person {
     public String toString() {
         return String.format("%s %s gets %s leva", getFirstName(), getLastName(),
                 new DecimalFormat("#.0####").format(this.getSalary()));
-        // 0 – prints a digit if provided, 0 otherwiseю
+        // 0 – prints a digit if provided, 0 otherwise
         // # – prints a digit if provided, nothing otherwise
-    }
-
-    public void increaseSalary(double bonus) {
-
-        double modifier;
-
-        if (this.getAge() < 30) {   // въчесляем процент
-            modifier = (bonus / 100) / 2;
-            this.setSalary(this.salary + this.salary * modifier);
-        } else {
-            modifier = bonus / 100;
-            this.setSalary(this.salary + this.salary * modifier);
-        }
-
-        /*double percent = (this.salary * bonus) / 100;
-        if (this.getAge() < 30) {
-            this.setSalary(this.salary + (percent / 2));    // нужно использовать сеттер
-        } else {
-            this.setSalary(this.salary += percent);         // нужно использовать сеттер
-        }*/
     }
 
 }
