@@ -8,7 +8,7 @@ public class Team {
 
     private String name;
     private List<Person> firstTeam;
-    private List<Person> reverseTeam;
+    private List<Person> reserveTeam;
 
     public String getName() {
         return this.name;
@@ -21,23 +21,25 @@ public class Team {
     public Team(String name) {
         this.setName(name);
         firstTeam = new ArrayList<>();
-        reverseTeam = new ArrayList<>();
+        reserveTeam = new ArrayList<>();
     }
 
     public void addPlayer(Person player) {  // добавляем игрока в зависимости от его возраста
         if (player.getAge() < 40) {
             firstTeam.add(player);
         } else {
-            reverseTeam.add(player);
+            reserveTeam.add(player);
         }
     }
 
     public List<Person> getFirstTeam() {
         return Collections.unmodifiableList(this.firstTeam);
+        // запрещаем модификации листа, так как если просто вернуть лист, то к его функциям
+        // откръвается доступ, и спокойно можно изменить сам лист, например с .add()
     }
 
-    public List<Person> getReverseTeam() {
-        return Collections.unmodifiableList(this.reverseTeam);
+    public List<Person> getReserveTeam() {
+        return Collections.unmodifiableList(this.reserveTeam);
     }
 
 }
