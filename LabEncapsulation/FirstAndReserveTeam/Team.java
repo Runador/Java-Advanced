@@ -36,6 +36,8 @@ public class Team {
         return Collections.unmodifiableList(this.firstTeam);
         // запрещаем модификации листа, так как если просто вернуть лист, то к его функциям
         // откръвается доступ, и спокойно можно изменить сам лист, например с .add()
+        // так как List - mutable object, и так нельзя будет его использовать, например .clear()
+        // immutable object - String например, которъй нужно создать как другую инстанцию
     }
 
     public List<Person> getReserveTeam() {

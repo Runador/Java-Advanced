@@ -80,7 +80,7 @@ public class Person {
 
         double modifier;
 
-        if (this.getAge() < 30) {   // въчесляем процент
+        if (this.getAge() < 30) {   // въчисляем процент
             modifier = (bonus / 100) / 2;
             this.setSalary(this.salary + this.salary * modifier);
         } else {
