@@ -16,7 +16,7 @@ public class Test {
                 // Create
                 BankAccount bankAccount = new BankAccount();
                 System.out.printf("Account ID%d created%n", bankAccount.getId());
-            } else if (bankAccountData[0].equals("Deposit")) {
+            } /*else if (bankAccountData[0].equals("Deposit")) {
                 // Deposit {Id} {Amount}
                 int id = Integer.parseInt(bankAccountData[1]);
                 bankAccount.setId(id);
@@ -33,7 +33,7 @@ public class Test {
                 int years = Integer.parseInt(bankAccountData[2]);
                 bankAccount.setId(id);
                 System.out.println(bankAccount.getInterestRate(years));
-            }
+            }*/
 
             input = scanner.nextLine();
         }
