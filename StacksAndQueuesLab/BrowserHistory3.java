@@ -14,13 +14,14 @@ public class BrowserHistory3 {
 
         while (!input.equals("Home")) {
 
-            if (input.equals("back")) {
+            if (browserHistory.size() > 1) {
                 browserHistory.pop();
                 System.out.println(browserHistory.peek());
             } else {
-                browserHistory.push(input);
-                currentURL = browserHistory.peek();
-                System.out.println(currentURL);
+                System.out.println("no previous URLs");
+            }
+            if (input.equals("back")) {
+
             }
 
             input = scanner.nextLine();
