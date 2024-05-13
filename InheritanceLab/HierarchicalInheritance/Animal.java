@@ -1,3 +1,5 @@
+package InheritanceLab.HierarchicalInheritance;
+
 public class Animal {
 
     public void eat() {
