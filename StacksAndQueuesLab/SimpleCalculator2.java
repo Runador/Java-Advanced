@@ -11,7 +11,7 @@ public class SimpleCalculator2 {
 
         // 2 + 3 - 1
 
-        ArrayDeque<String> stack = new ArrayDeque();
+        ArrayDeque<String> stack = new ArrayDeque<>();
         String[] tokens = scanner.nextLine().split("\\s+");
         Collections.addAll(stack, tokens);
 
