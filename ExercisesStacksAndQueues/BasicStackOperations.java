@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class BasicStackOperations {
     public static void main(String[] args) {
@@ -18,13 +19,8 @@ public class BasicStackOperations {
         int S = stackOperations[1];
         int X = stackOperations[2];
 
-        int[] lineOfNumbers = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(Integer::parseInt).toArray();
-
-        for (int i = 0; i < N; i++) {
-            int element = lineOfNumbers[i];
-            stack.push(element);
-        }
+        Arrays.stream(scanner.nextLine().split("\\s+")).limit(N)
+                .mapToInt(Integer::parseInt).forEach(stack::push);
 
         for (int i = 0; i < S; i++) {
             stack.pop();

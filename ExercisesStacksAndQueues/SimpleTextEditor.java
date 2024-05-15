@@ -31,8 +31,10 @@ public class SimpleTextEditor {
                 }
                 case "3" -> {
                     int index = Integer.parseInt(tokens[1]);
-                    char element = text.charAt(index - 1);
-                    System.out.println(element);
+                    if (index >= 0 && index <= text.length() - 1) {
+                        char element = text.charAt(index - 1);
+                        System.out.println(element);
+                    }
                 }
                 case "4" -> {
                     stack.pop();
