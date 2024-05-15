@@ -15,6 +15,7 @@ public class MaximumElement {
         for (int i = 0; i < numberOfCommands; i++) {
 
             String[] tokens = scanner.nextLine().split("\\s+");
+
             switch (tokens[0]) {
                 case "1" -> {
                     int element = Integer.parseInt(tokens[1]);
@@ -28,4 +29,3 @@ public class MaximumElement {
 
     }
 }
-
