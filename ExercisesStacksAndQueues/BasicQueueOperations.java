@@ -17,13 +17,13 @@ public class BasicQueueOperations {
         int S = Integer.parseInt(commandsForQueue[1]);
         int X = Integer.parseInt(commandsForQueue[2]);
 
-        int[] numbers = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(Integer::parseInt).toArray();
+        Arrays.stream(scanner.nextLine().split("\\s+"))
+                .limit(N).mapToInt(Integer::parseInt).forEach(queue::offer);
 
-        for (int i = 0; i < N; i++) {
+        /*for (int i = 0; i < N; i++) {
             int element = numbers[i];
             queue.offer(element);
-        }
+        }*/
 
         for (int i = 0; i < S; i++) {
             queue.poll();
