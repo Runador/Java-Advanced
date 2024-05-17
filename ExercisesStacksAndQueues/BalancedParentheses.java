@@ -24,6 +24,11 @@ public class BalancedParentheses {
         int closingParenthesisSize = closingParenthesis.size();
         int counter = 0;
 
+        if (openedParenthesis.isEmpty() || closingParenthesis.isEmpty()) {
+            System.out.println("NO");
+            return;
+        }
+
         while (!openedParenthesis.isEmpty() && !closingParenthesis.isEmpty()) {
             String first = openedParenthesis.pop();
             String second = closingParenthesis.poll();
@@ -34,8 +39,7 @@ public class BalancedParentheses {
             }
         }
 
-        if ((openedParenthesisSize == counter) || (closingParenthesisSize == counter)
-                || (openedParenthesisSize - closingParenthesisSize == 0)) {
+        if (openedParenthesisSize - counter == 0 || closingParenthesisSize - counter == 0) {
             System.out.println("YES");
         } else {
             System.out.println("NO");
