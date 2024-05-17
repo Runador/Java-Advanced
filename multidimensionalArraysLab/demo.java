@@ -1,4 +1,4 @@
-package MultidimensionalArraysLab;
+package multidimensionalArraysLab;
 
 import java.util.Scanner;
 

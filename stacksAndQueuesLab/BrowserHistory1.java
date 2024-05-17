@@ -1,37 +1,31 @@
-package StacksAndQueuesLab;
+package stacksAndQueuesLab;
 
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
-public class BrowserHistory {
+public class BrowserHistory1 {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
-        ArrayDeque<String> stack = new ArrayDeque<>();
+        ArrayDeque<String> browser = new ArrayDeque<>();
+        String url = "";
         String command = scanner.nextLine();
-        String currentTab = "";
 
         while (!command.equals("Home")) {
 
             if (command.equals("back")) {
-                if (!stack.isEmpty()) {
-                    currentTab = stack.pop();
+                if (!browser.isEmpty()) {
+                    browser.pop();
                 } else {
                     System.out.println("no previous URLs");
-                    command = scanner.nextLine();
-                    continue;
                 }
             } else {
-                if (!currentTab.equals("")) {
-                    stack.push(currentTab);
+                browser.push(url);
+                url = command;
                 }
-                currentTab = command;
             }
 
-            System.out.println(currentTab);
+            System.out.println(url);
             command = scanner.nextLine();
-
         }
     }
-}

@@ -1,4 +1,4 @@
-package MultidimensionalArraysLab;
+package multidimensionalArraysLab;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,9 +20,11 @@ public class SumMatrixElements {
 
             matrix[row] = Arrays.stream(scanner.nextLine().split(",\\s+"))
                                     .mapToInt(Integer::parseInt).toArray();
+
             for (int col = 0; col < matrix[row].length; col++) {
                 sum += matrix[row][col];
             }
+
         }
 
         System.out.println(rows);

@@ -1,4 +1,4 @@
-package MultidimensionalArraysLab;
+package multidimensionalArraysLab;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -30,11 +30,6 @@ public class MaximumSumOf2X2Submatrix {
                 int secondRight = matrix[row + 1][col + 1];
 
                 int thisSum = firstLeft + firstRight + secondLeft + secondRight;
-
-                /*subMatrix[row][col] = firstLeft;
-                subMatrix[row][col + 1] = firstRight;
-                subMatrix[row + 1][col] = secondLeft;
-                subMatrix[row + 1][col + 1] = secondRight;*/
 
                 if (thisSum > biggestSum) {
                     biggestSum = thisSum;
