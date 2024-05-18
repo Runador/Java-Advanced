@@ -9,9 +9,9 @@ public class IntersectionOfTwoMatrices {
         int rows = Integer.parseInt(scanner.nextLine());
         int cols = Integer.parseInt(scanner.nextLine());
 
-        String[][] firstMatrix = new String[rows][cols];
-        String[][] secondMatrix = new String[rows][cols];
-        String[][] thirdMatrix = new String[rows][cols];
+        char[][] firstMatrix = new char[rows][cols];
+        char[][] secondMatrix = new char[rows][cols];
+        char[][] thirdMatrix = new char[rows][cols];
 
         for (int row = 0; row < firstMatrix.length; row++) {
             firstMatrix[row] = readArray(scanner);
@@ -24,23 +24,34 @@ public class IntersectionOfTwoMatrices {
 
         for (int row = 0; row < firstMatrix.length; row++) {
             for (int col = 0; col < firstMatrix[row].length; col++) {
-                String firstElement = firstMatrix[row][col];
-                String secondElement = secondMatrix[row][col];
-                if (!firstElement.equals(secondElement)) {
-                    thirdMatrix[row][col] = "*";
+                char firstElement = firstMatrix[row][col];
+                char secondElement = secondMatrix[row][col];
+                if (firstElement != secondElement) {
+                    thirdMatrix[row][col] = '*';
                 }
             }
         }
 
-        for (String[] row : thirdMatrix) {
-            for (String element : row) {
+        for (char[] row : thirdMatrix) {
+            for (char element : row) {
                 System.out.print(element + " ");
             }
             System.out.println();
         }
     }
 
-    private static String[] readArray(Scanner scanner) {
+    /*private static String[] readArray(Scanner scanner) {
         return scanner.nextLine().split("\\s+");
+    }*/
+
+    /*private static void fillMatrix(char[][] matrix, Scanner scanner) {
+        for (int row = 0; row < matrix.length; row++) {
+            matrix[row] = scanner.nextLine().replaceAll("\\s+", "").toCharArray();
+        }
+    }*/
+
+    private static char[] readArray(Scanner scanner) {
+        return scanner.nextLine().replaceAll("\\s+", "").toCharArray();
     }
+
 }

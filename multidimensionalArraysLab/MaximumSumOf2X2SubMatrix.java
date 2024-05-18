@@ -3,7 +3,7 @@ package multidimensionalArraysLab;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MaximumSumOf2X2Submatrix {
+public class MaximumSumOf2X2SubMatrix {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class MaximumSumOf2X2Submatrix {
         int rows = matrixTokens[0];
         int cols = matrixTokens[1];
 
-        int biggestSum = 0;
+        int biggestSum = Integer.MIN_VALUE;
 
         int[][] matrix = new int[rows][cols];
         int[][] subMatrix = new int[2][2];
@@ -33,6 +33,7 @@ public class MaximumSumOf2X2Submatrix {
 
                 if (thisSum > biggestSum) {
                     biggestSum = thisSum;
+
                     subMatrix[0][0] = firstLeft;
                     subMatrix[0][1] = firstRight;
                     subMatrix[1][0] = secondLeft;
