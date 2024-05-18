@@ -13,12 +13,8 @@ public class IntersectionOfTwoMatrices {
         char[][] secondMatrix = new char[rows][cols];
         char[][] thirdMatrix = new char[rows][cols];
 
-        for (int row = 0; row < firstMatrix.length; row++) {
-            firstMatrix[row] = readArray(scanner);
-        }
-        for (int row = 0; row < secondMatrix.length; row++) {
-            secondMatrix[row] = readArray(scanner);
-        }
+        fillMatrix(firstMatrix, scanner);
+        fillMatrix(secondMatrix, scanner);
 
         System.arraycopy(firstMatrix, 0, thirdMatrix, 0, firstMatrix.length );
 
@@ -40,18 +36,10 @@ public class IntersectionOfTwoMatrices {
         }
     }
 
-    /*private static String[] readArray(Scanner scanner) {
-        return scanner.nextLine().split("\\s+");
-    }*/
-
-    /*private static void fillMatrix(char[][] matrix, Scanner scanner) {
+    private static void fillMatrix(char[][] matrix, Scanner scanner) {
         for (int row = 0; row < matrix.length; row++) {
             matrix[row] = scanner.nextLine().replaceAll("\\s+", "").toCharArray();
         }
-    }*/
-
-    private static char[] readArray(Scanner scanner) {
-        return scanner.nextLine().replaceAll("\\s+", "").toCharArray();
     }
 
 }
