@@ -12,13 +12,18 @@ public class MatrixOfPalindromes {
 
         String[][] matrix = new String[rows][cols];
 
-        fillMatrix(matrix, scanner);
+        int asciiA = 97;
 
-    }
-
-    private static void fillMatrix(String[][] matrix, Scanner scanner) {
         for (int row = 0; row < matrix.length; row++) {
-            matrix[row] = scanner.nextLine().split(" ");
+            for (int col = 0; col < matrix[row].length; col++) {
+                char firstLetter = (char) (asciiA + row);
+                char secondLetter = (char) (firstLetter + col);
+                char thirdLetter = (char) (asciiA + row);
+                matrix[row][col] = "" + firstLetter + secondLetter + thirdLetter;
+                System.out.printf("%c%c%c ", firstLetter, secondLetter, thirdLetter);
+            }
+            System.out.println();
         }
+
     }
 }
