@@ -1,1 +1,1 @@
-This repository contains my projects from SoftUni Advanced module.
+This repository contains projects from SoftUni Advanced module.
