@@ -1,4 +1,4 @@
-package SetsAndMapsAdvancedLab;
+package setsAndMapsAdvancedLab;
 
 import java.util.LinkedHashSet;
 import java.util.Scanner;
@@ -21,6 +21,7 @@ public class ParkingLot {
             } else {
                 carNumbers.remove(carNumber);
             }
+
             input = scanner.nextLine();
         }
 

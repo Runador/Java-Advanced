@@ -16,7 +16,7 @@ public class IntersectionOfTwoMatrices {
         fillMatrix(firstMatrix, scanner);
         fillMatrix(secondMatrix, scanner);
 
-        System.arraycopy(firstMatrix, 0, thirdMatrix, 0, firstMatrix.length );
+        System.arraycopy(firstMatrix, 0, thirdMatrix, 0, firstMatrix.length);
 
         for (int row = 0; row < firstMatrix.length; row++) {
             for (int col = 0; col < firstMatrix[row].length; col++) {
@@ -43,3 +43,4 @@ public class IntersectionOfTwoMatrices {
     }
 
 }
+

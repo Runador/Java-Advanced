@@ -1,4 +1,4 @@
-package SetsAndMapsAdvancedLab;
+package setsAndMapsAdvancedLab;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
