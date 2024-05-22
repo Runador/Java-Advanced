@@ -11,7 +11,7 @@ public class PositionsOf {
         int rows = Integer.parseInt(tokens[0]);
         int cols = Integer.parseInt(tokens[1]);
 
-        boolean isNotFound = true;
+        boolean isNotFound = false;
 
         int[][] matrix = new int[rows][cols];
 
@@ -27,7 +27,7 @@ public class PositionsOf {
                 int element = matrix[row][col];
                 if (element == number) {
                     System.out.println(row + " " + col);
-                    isNotFound = false;
+                    isNotFound = true;
                 }
             }
         }
