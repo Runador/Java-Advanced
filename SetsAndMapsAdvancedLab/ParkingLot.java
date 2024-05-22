@@ -32,6 +32,5 @@ public class ParkingLot {
         } else {
             System.out.println("Parking Lot is Empty");
         }
-
     }
 }
