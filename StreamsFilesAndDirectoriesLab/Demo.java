@@ -66,7 +66,7 @@ public class Demo {
         fileWriter.close();
 
         // Опенинг a File Stream:
-        
+
         String path = "C:\\Users\\Runador\\Music\\iPhone\\list(1).txt";
 
         try (FileInputStream fileInputStream = new FileInputStream(path)) {
