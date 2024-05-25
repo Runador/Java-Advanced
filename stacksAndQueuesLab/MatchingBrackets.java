@@ -7,7 +7,7 @@ public class MatchingBrackets {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayDeque<Integer> stack = new ArrayDeque<>();
+        ArrayDeque<Integer> indexesStack = new ArrayDeque<>();
 
         String expression = scanner.nextLine();
 
@@ -19,11 +19,11 @@ public class MatchingBrackets {
 
             if (symbol == '(') {
                 int firstIndex = Integer.parseInt(String.valueOf(i));
-                stack.push(firstIndex);
+                indexesStack.push(firstIndex);
             } else if (symbol == ')') {
-                int firstIndex = stack.pop();
-                int secondIndex = i;
-                String substring = expression.substring(firstIndex, secondIndex + 1);
+                int firstIndex = indexesStack.pop();
+                int secondIndex = i + 1;
+                String substring = expression.substring(firstIndex, secondIndex);
                 System.out.println(substring);
             }
 
