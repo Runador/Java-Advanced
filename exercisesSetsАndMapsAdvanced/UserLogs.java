@@ -1,71 +1,68 @@
 package exercisesSetsАndMapsAdvanced;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserLogs {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Map<String, List<String>> usersMap = new TreeMap<>();
-
+        Map<String, LinkedHashMap<String, Integer>> usersMap = new TreeMap<>();
         String input = scanner.nextLine();
 
         while (!input.equalsIgnoreCase("end")) {
 
-            // IP={IP.Address} message={A&sample&message} user={username}
-            String[] tokens = input.split(" ");
-            String ipAddress;
-            String name = getName(tokens);
+            Pattern patternIP = Pattern.compile("(?<ip>([A-Z]+[0-9:]+)+|([0-9.]{12,15})+)");
+            Matcher matcherIP = patternIP.matcher(input);
 
+            Pattern patternName = Pattern.compile("(?<name>[a-zA-z0-9]*$)");
+            Matcher matcherName = patternName.matcher(input);
+
+            String ipAddress = "";
+            String name = "";
+
+            if (matcherIP.find()) {
+                ipAddress = matcherIP.group("ip");
+            }
+
+            if (matcherName.find()) {
+                name = matcherName.group("name");
+            }
+
+            usersMap.putIfAbsent(name, new LinkedHashMap<>());
+            usersMap.get(name).putIfAbsent(ipAddress, 0);
+
+            if (usersMap.containsKey(name)) {
+                usersMap.get(name).put(ipAddress, usersMap.get(name).get(ipAddress) + 1);
+            }
 
             input = scanner.nextLine();
         }
 
-    }
+        for (Map.Entry<String, LinkedHashMap<String, Integer>> entryName : usersMap.entrySet()) {
 
-    private static boolean isValidLength(String name) {
-        return name.length() >= 3 && name.length() <= 50;
-    }
+            String name = entryName.getKey();
+            System.out.println(name + ":");
 
-    private static String getIP(String[] input) {
+            LinkedHashMap<String, Integer> mapIP = entryName.getValue();
+            int count = mapIP.size();
 
-        // IP=192.23.30.40
-        // IP=FE80:0000:0000:0000:0202:B3FF:FE1E:8329
+            for (var entryIP : mapIP.entrySet()) {
 
-        String ip = "";
+                String ip = entryIP.getKey();
+                int counter = entryIP.getValue();
 
-        for (String element : input) {
-            for (int i = 0; i < element.length(); i++) {
-                int firstIndex;
-                if (element.contains("=")) {
-                    firstIndex = element.indexOf('=') + 1;
-                    char secondIndex = (char) firstIndex;
-                    if (Character.isLetter(secondIndex) && Character.isLowerCase(secondIndex)) {
-                        ip = element.substring(firstIndex);
-                    }
+                if (count == 1) {
+                    System.out.printf("%s => %d.", ip, counter);
+                } else {
+                    System.out.printf("%s => %d, ", ip, counter);
                 }
-            }
-        }
-        return ip;
-    }
 
-    private static String getName(String[] input) {
-        String name = "";
-        for (int i = 0; i < input.length; i++) {
-            String element = input[i];
-            for (int j = 0; j < element.length(); j++) {
-                int firstIndex;
-                if (element.contains("=")) {
-                    firstIndex = element.indexOf('=') + 1;
-                    char secondIndex = (char) firstIndex;
-                    if (Character.isLetter(secondIndex) && Character.isLowerCase(secondIndex)) {
-                        name = element.substring(firstIndex);
-                    } else {
-                        break;
-                    }
-                }
+                count--;
             }
+
+            System.out.println();
         }
-        return name;
     }
 }

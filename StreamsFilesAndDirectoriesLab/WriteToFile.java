@@ -10,7 +10,7 @@ public class WriteToFile {
         try (FileInputStream inputStream = new FileInputStream(path)){
             int oneByte = inputStream.read();
             while (oneByte >= 0) {
-                if (!)
+
                 System.out.printf("%s ", Integer.toBinaryString(oneByte));
                 oneByte = inputStream.read();
             }
