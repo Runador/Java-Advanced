@@ -14,11 +14,15 @@ public class ConsumerPrint {
         List<String> names = Arrays.stream(scanner.nextLine().split("\\s+"))
                         .collect(Collectors.toList());
 
-        Consumer<String> consumer = name -> System.out.println(name);
+        names.forEach(name -> System.out.println(name));
 
-        for (String name : names) {
+        //Consumer<String> consumer = name -> System.out.println(name);
+
+        /*for (String name : names) {
             consumer.accept(name);
-        }
+        }*/
+
+        //names.forEach(consumer);
 
     }
 }
