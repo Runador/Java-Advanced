@@ -10,12 +10,12 @@ public class KnightsOfHonor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<String> names = Arrays.stream(scanner.nextLine().split("\\s+"))
-                        .collect(Collectors.toList());
+        Arrays.stream(scanner.nextLine().split("\\s+"))
+                .forEach(name -> System.out.println("Sir " + name));
 
         Consumer<String> consumer = name -> System.out.println("Sir " + name);
 
-        names.forEach(consumer);
+        //names.forEach(name -> System.out.println("Sir " + name));
 
     }
 }
