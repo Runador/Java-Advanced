@@ -14,7 +14,7 @@ public class ConsumerPrint {
         List<String> names = Arrays.stream(scanner.nextLine().split("\\s+"))
                         .collect(Collectors.toList());
 
-        names.forEach(name -> System.out.println(name));
+        names.forEach(System.out::println);
 
         //Consumer<String> consumer = name -> System.out.println(name);
 
