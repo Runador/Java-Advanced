@@ -1,4 +1,4 @@
-package StreamsFilesAndDirectoriesLab;
+package streamsFilesAndDirectoriesLab;
 
 import java.io.*;
 import java.nio.file.Files;
