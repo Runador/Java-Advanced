@@ -26,7 +26,7 @@ public class Main {
 
         while (!input.equals("End")) {
 
-            String[] data = scanner.nextLine().split(" ");
+            String[] data = input.split(" ");
 
             if (data[0].equals("Drive")) {
                 String model = data[1];
@@ -39,8 +39,7 @@ public class Main {
         }
 
         for (Car car : cars) {
-            // {Model} {fuelAmount} {distanceTraveled}
-            System.out.printf("%s %.2f %.0f%n", car.getModel(), car.getFuelAmount(), car.);
+            System.out.printf("%s %.2f %.0f%n", car.getModel(), car.getFuelAmount(), car.getDistanceTraveled());
         }
 
     }

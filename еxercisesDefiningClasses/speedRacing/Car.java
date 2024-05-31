@@ -14,6 +14,14 @@ public class Car {
         this.distanceTraveled = 0;
     }
 
+    public double getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    public void setDistanceTraveled(double distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
     public String getModel() {
         return model;
     }
@@ -40,7 +48,7 @@ public class Car {
 
     public void drive(double amountOfKm) {
         double requiredFuel = amountOfKm * fuelCostPerKm;
-        if (requiredFuel >= fuelAmount) {
+        if (fuelAmount >= requiredFuel) {
             fuelAmount -= requiredFuel;
             distanceTraveled += amountOfKm;
         } else {
