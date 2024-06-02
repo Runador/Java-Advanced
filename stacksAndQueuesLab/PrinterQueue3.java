@@ -16,14 +16,13 @@ public class PrinterQueue3 {
             String currentFile = input;
             printerQueue.offer(currentFile);
 
-            if (!input.equals("cancel")) {
-                System.out.println(currentFile);
-            } else {
-                System.out.println(printerQueue.poll());
-            }/* else {
-                System.out.println("Printer is on standby");
-            }*/
-
+            if (input.equals("cancel")) {
+                if (printerQueue.isEmpty()) {
+                    System.out.println("Printer is on standby");
+                } else {
+                    System.out.println(printerQueue.poll());
+                }
+            }
 
             input = scanner.nextLine();
         }
