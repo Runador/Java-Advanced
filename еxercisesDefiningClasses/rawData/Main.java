@@ -1,15 +1,19 @@
 package еxercisesDefiningClasses.rawData;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        List<Car> cars = new ArrayList<>();
+
         int n = Integer.parseInt(scanner.nextLine());
 
         while (n-- > 0) {
-            String[] data = scanner.nextLine().split(" ");
+            String[] data = scanner.nextLine().split("\\s+");
             // ChevroletAstro 200 180 1000 fragile 1.3 1 1.5 2 1.4 2 1.7 4
             String model = data[0];
             int engineSpeed = Integer.parseInt(data[1]);
@@ -18,6 +22,7 @@ public class Main {
             int cargoWeight = Integer.parseInt(data[3]);
             String cargoType = data[4];
             Cargo cargo = new Cargo(cargoWeight, cargoType);
+            List<Tire> tires = new ArrayList<>();
             double tirePressure1 = Double.parseDouble(data[5]);
             int tire1Age = Integer.parseInt(data[6]);
             Tire tire1 = new Tire(tirePressure1, tire1Age);
@@ -30,9 +35,32 @@ public class Main {
             double tirePressure4 = Double.parseDouble(data[11]);
             int tire4Age = Integer.parseInt(data[12]);
             Tire tire4 = new Tire(tirePressure4, tire4Age);
-            Car car = new Car(model, engine, cargo,
-                    tire1, tire2,
-                    tirePressure3, tire3Age, tirePressure4, tire4Age);
+            tires.add(tire1);
+            tires.add(tire2);
+            tires.add(tire3);
+            tires.add(tire4);
+            Car car = new Car(model, engine, cargo, tires);
+            cars.add(car);
+        }
+
+        String command = scanner.nextLine();
+
+        if ("fragile".equals(command)) {
+            for (Car car : cars) {
+                List<Tire> tires = car.getTires();
+                for (Tire tire : tires) {
+                    if (tire.getTirePressure() < 1.0) {
+                        System.out.println(car.getModel());
+                        break;
+                    }
+                }
+            }
+        } else if ("flamable".equals(command)) {
+            for (Car car : cars) {
+                if (car.getEngine().getEnginePower() > 250) {
+                    System.out.println(car.getModel());
+                }
+            }
         }
 
     }

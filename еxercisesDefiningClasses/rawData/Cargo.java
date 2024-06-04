@@ -10,19 +10,4 @@ public class Cargo {
         this.cargoType = cargoType;
     }
 
-    public int getCargoWeight() {
-        return cargoWeight;
-    }
-
-    public void setCargoWeight(int cargoWeight) {
-        this.cargoWeight = cargoWeight;
-    }
-
-    public String getCargoType() {
-        return cargoType;
-    }
-
-    public void setCargoType(String cargoType) {
-        this.cargoType = cargoType;
-    }
 }

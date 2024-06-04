@@ -14,15 +14,4 @@ public class Tire {
         return tirePressure;
     }
 
-    public void setTirePressure(double tirePressure) {
-        this.tirePressure = tirePressure;
-    }
-
-    public int getTireAge() {
-        return tireAge;
-    }
-
-    public void setTireAge(int tireAge) {
-        this.tireAge = tireAge;
-    }
 }
