@@ -1,7 +1,7 @@
 package stacksAndQueuesLab;
 
-public class BrowserHistoryUpgrade {
+public class MathPotato {
     public static void main(String[] args) {
-
+        
     }
 }
