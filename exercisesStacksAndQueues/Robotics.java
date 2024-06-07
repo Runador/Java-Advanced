@@ -1,7 +1,7 @@
 package exercisesStacksAndQueues;
 
-public class PoisonousPlants {
+public class Robotics {
     public static void main(String[] args) {
-
+        
     }
 }
