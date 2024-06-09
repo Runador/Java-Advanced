@@ -11,7 +11,7 @@ public class MaximumElement {
 
         ArrayDeque<Integer> stack = new ArrayDeque<>();
 
-        int numberOfCommands = (Integer.parseInt(scanner.nextLine()));
+        int numberOfCommands = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < numberOfCommands; i++) {
 
