@@ -1,4 +1,4 @@
-package opinionPoll;
+package еxercisesDefiningClasses.opinionPoll;
 
 public class Person {
 
