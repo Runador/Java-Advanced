@@ -12,6 +12,7 @@ public class ReadFile {
             int oneByte = inputStream.read();
             while (oneByte >= 0) {
                 System.out.printf("%s ", Integer.toBinaryString(oneByte));
+                /*System.out.printf("%c ", (char) oneByte);*/
                 oneByte = inputStream.read();
             }
         } catch (IOException e) {

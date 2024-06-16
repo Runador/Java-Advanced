@@ -1,6 +1,7 @@
 package еxercisesDefiningClasses.companyRoster;
 
 public class Employee {
+
     // name, salary, position, department, email, and age
 
     private String name;

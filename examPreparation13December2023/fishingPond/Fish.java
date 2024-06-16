@@ -1,4 +1,4 @@
-package fishingPond;
+package examPreparation13December2023.fishingPond;
 
 public class Fish {
 

@@ -1,4 +1,4 @@
-package fishingPond;
+package examPreparation13December2023.fishingPond;
 
 public class Main {
     public static void main(String[] args) {
