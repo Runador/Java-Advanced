@@ -1,4 +1,4 @@
-package еxercisesDefiningClasses.opinionPoll;
+package opinionPoll;
 
 import java.util.*;
 
@@ -18,12 +18,7 @@ public class Main {
         }
 
         people.sort(Comparator.comparing(Person::getName));
-
-        for (Person person : people) {
-            if (person.getAge() > 30) {
-                System.out.printf("%s - %d%n", person.getName(), person.getAge());
-            }
-        }
+        people.stream().filter(person -> person.getAge() > 30).forEach(person -> System.out.printf("%s - %d%n", person.getName(), person.getAge()));
 
     }
 }

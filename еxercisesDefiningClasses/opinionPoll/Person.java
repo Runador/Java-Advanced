@@ -1,4 +1,4 @@
-package еxercisesDefiningClasses.opinionPoll;
+package opinionPoll;
 
 public class Person {
 
@@ -25,4 +25,5 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
 }
