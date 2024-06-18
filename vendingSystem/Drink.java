@@ -1,4 +1,4 @@
-package vendingMachine;
+package vendingSystem;
 
 import java.math.BigDecimal;
 

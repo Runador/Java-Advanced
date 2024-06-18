@@ -1,4 +1,4 @@
-package vendingMachine;
+package vendingSystem;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,18 +38,19 @@ public class VendingMachine {
     }
 
     public String buyDrink(String name) {
+        //return drinks.stream().filter(drink -> drink.getName().equals(name)).findFirst().orElse(null).toString();
         for (Drink drink : drinks) {
             if (drink.getName().equals(name)) {
-                System.out.println(drink);
+                return drink.toString();
             }
         }
-
-        return drinks.stream().filter(drink -> drink.getName().equals(name)).findFirst().toString();
-
+        return null;
     }
+
     public String report() {
         StringBuilder output = new StringBuilder("Drinks available:").append(System.lineSeparator());
-        drinks.forEach(output::append);
+        drinks.forEach(drink -> output.append(drink).append(System.lineSeparator()));
         return output.toString();
     }
+
 }
