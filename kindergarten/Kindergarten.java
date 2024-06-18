@@ -61,11 +61,15 @@ public class Kindergarten {
     }
 
     public String registryReport() {
+
         StringBuilder output = new StringBuilder();
-        output.append("Registered children in ").append(getName()).append(":");
-        // Orders the children by age ascending, then by first name ascending, then by last name ascending
-        registry.stream().sorted(Comparator.comparing(Child::getAge)).sorted(Comparator.comparing(Child::getFirstName))
-                .sorted(Comparator.comparing(Child::getFirstName));
-        
+        Comparator<Child> comparator = Comparator.comparing(Child::getAge).thenComparing(Child::getFirstName)
+                .thenComparing(Child::getLastName);
+        output.append("Registered children in ").append(getName()).append(":").append(System.lineSeparator());
+
+        List<Child> sortedChildren = registry.stream().sorted(comparator).toList();
+        sortedChildren.forEach(child -> output.append("--").append(System.lineSeparator())
+                .append(child).append(System.lineSeparator()));
+        return output.toString();
     }
 }
