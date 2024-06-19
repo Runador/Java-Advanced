@@ -69,6 +69,6 @@ public class Workout {
         exercises.forEach(exercise -> output.append(exercise)
                 .append(System.lineSeparator()));
         return output.toString();
-
     }
+
 }

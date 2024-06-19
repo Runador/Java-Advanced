@@ -36,6 +36,7 @@ public class Student {
         this.bestCourse = bestCourse;
     }
 
+    @Override
     public String toString() {
         return String.format("Student: %s %s, Best Course = %s",
                 getFirstName(), getLastName(), getBestCourse());

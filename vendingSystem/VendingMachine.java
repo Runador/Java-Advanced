@@ -1,9 +1,6 @@
 package vendingSystem;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class VendingMachine {
 
@@ -12,7 +9,7 @@ public class VendingMachine {
 
     public VendingMachine(int buttonCapacity) {
         this.buttonCapacity = buttonCapacity;
-        drinks = new ArrayList<>();
+        this.drinks = new ArrayList<>();
     }
 
     public int getCount() {
@@ -30,14 +27,22 @@ public class VendingMachine {
     }
 
     public Drink getLongest() {
-        return Collections.max(drinks, Comparator.comparing(Drink::getVolume));
+        return Collections.max(drinks, Comparator.comparingInt(Drink::getVolume));
     }
+
+    /*public Drink getLongest() {
+        return this.drinks.stream().max(Comparator.comparingInt(Drink::getVolume)).orElse(null);
+    }*/
 
     public Drink getCheapest() {
         return Collections.min(drinks, Comparator.comparing(Drink::getPrice));
     }
 
-    public String buyDrink(String name) {
+    /*public Drink getCheapest() {
+        return this.drinks.stream().min(Comparator.comparing(Drink::getPrice)).orElse(null);
+    }*/
+
+    /*public String buyDrink(String name) {
         //return drinks.stream().filter(drink -> drink.getName().equals(name)).findFirst().orElse(null).toString();
         for (Drink drink : drinks) {
             if (drink.getName().equals(name)) {
@@ -45,12 +50,22 @@ public class VendingMachine {
             }
         }
         return null;
+    }*/
+
+    public String buyDrink(String name) {
+        Optional<Drink> drink = this.drinks.stream().filter(d -> d.getName().equals(name)).findFirst();
+        return drink.map(value -> value.toString().trim()).orElse("");
     }
+
+    /*public String buyDrink(String name) {
+        Optional<Drink> drink = this.drinks.stream().filter(d -> d.getName().equals(name)).findFirst();
+        return drink.map(value -> value.toString().trim()).orElse("");
+    }*/
 
     public String report() {
         StringBuilder output = new StringBuilder("Drinks available:").append(System.lineSeparator());
         drinks.forEach(drink -> output.append(drink).append(System.lineSeparator()));
-        return output.toString();
+        return output.toString().trim();
     }
 
 }

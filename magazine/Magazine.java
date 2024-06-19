@@ -14,7 +14,7 @@ public class Magazine {
     public Magazine(String type, int capacity) {
         this.capacity = capacity;
         this.type = type;
-        data = new ArrayList<>();
+        this.data = new ArrayList<>();
     }
 
     public int getCapacity() {
@@ -51,6 +51,12 @@ public class Magazine {
         return data.removeIf(cloth -> cloth.getColor().equals(color));
     }
 
+    /*public boolean removeCloth(String color) {
+        Cloth cloth = this.getCloth(color);
+        data.remove(cloth);
+        return cloth != null;
+    }*/
+
     public Cloth getSmallestCloth() {
         return Collections.min(data, Comparator.comparing(Cloth::getSize));
     }
@@ -64,11 +70,10 @@ public class Magazine {
     }
 
     public String report() {
-
         StringBuilder output = new StringBuilder();
         output.append(getType()).append(" magazine contains:").append(System.lineSeparator());
         data.forEach(cloth -> output.append(cloth).append(System.lineSeparator()));
-        return output.toString();
+        return output.toString().trim();
     }
 
 }

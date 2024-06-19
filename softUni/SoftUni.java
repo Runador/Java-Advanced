@@ -48,20 +48,15 @@ public class SoftUni {
     }
 
     public Student getStudent(String firstName, String lastName) {
-        return data.stream().filter(student -> student.getFirstName()
-                .equals(firstName)).filter(student -> student.getLastName()
-                .equals(lastName)).findFirst().orElse(null);
+        return data.stream().filter(student -> student.getFirstName().equals(firstName)
+                && student.getLastName().equals(lastName)).findFirst().orElse(null);
     }
 
     public String getStatistics() {
-
         StringBuilder output = new StringBuilder();
         output.append("Hall size: ").append(getCount()).append(System.lineSeparator());
-        data.forEach(student -> output.append("Student: ")
-                .append(student.getFirstName()).append(" ")
-                .append(student.getLastName()).append(", Best Course = ")
-                .append(student.getBestCourse()).append(System.lineSeparator()));
-        return output.toString();
+        data.forEach(student -> output.append(student).append(System.lineSeparator()));
+        return output.toString().trim();
     }
 
 }
