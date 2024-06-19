@@ -54,6 +54,7 @@ public class Cage {
             if (data.contains(parrot)) {
                 if (parrot.getName().equals(name)) {
                     parrot.setAvailable(false);
+                    data.remove(parrot);
                     return parrot;
                 }
             }
@@ -66,7 +67,6 @@ public class Cage {
         this.data.forEach(parrot -> {
             if (parrot.getSpecies().equals(species)) {
                 parrot.setAvailable(false);
-
                 parrots.add(parrot);
             }
         });
@@ -80,7 +80,11 @@ public class Cage {
     public String report() {
         StringBuilder output = new StringBuilder();
         output.append("Parrots available at ").append(getName()).append(":").append(System.lineSeparator());
-        data.forEach(parrot -> output.append(parrot).append(System.lineSeparator()));
+        data.forEach(parrot -> {
+            if (parrot.isAvailable()) {
+                output.append(parrot).append(System.lineSeparator());
+            }
+        });
         return output.toString().trim();
     }
 
