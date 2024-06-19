@@ -38,8 +38,9 @@ public class Drink {
         this.volume = volume;
     }
 
+    @Override
     public String toString() {
-        return String.format("Name: %s, Price: $%f, Volume: %s ml",
+        return String.format("Name: %s, Price: $%.0f, Volume: %s ml",
                 getName(), getPrice(), getVolume());
     }
 

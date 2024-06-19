@@ -62,14 +62,15 @@ public class Cage {
     }
 
     public List<Parrot> sellParrotBySpecies(String species) {
-        List<parrots.Parrot> toReturn = new ArrayList<>();
+        List<Parrot> parrots = new ArrayList<>();
         this.data.forEach(parrot -> {
             if (parrot.getSpecies().equals(species)) {
                 parrot.setAvailable(false);
-                toReturn.add(parrot);
+
+                parrots.add(parrot);
             }
         });
-        return toReturn;
+        return parrots;
     }
 
     public int count() {

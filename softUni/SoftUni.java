@@ -23,12 +23,12 @@ public class SoftUni {
 
     public String insert(Student student) {
         String output;
-        if (capacity > data.size()) {
+        if (data.contains(student)) {
+            output = "Student is already in the hall.";
+        } else if (capacity > data.size()) {
             data.add(student);
             output = String.format("Added student %s %s.",
                     student.getFirstName(), student.getLastName());
-        } else if (data.contains(student)) {
-            output = "Student is already in the hall.";
         } else {
             output = "The hall is full.";
         }
