@@ -51,38 +51,22 @@ public class LaunchPad {
         }
     }
 
-    // Method removeSpacecraft(String name) – removes a Spacecraft by given name,
-    // if such exists, and returns boolean (true if it is removed, otherwise – false)
-
     public boolean removeSpacecraft(String name) {
         return spacecrafts.removeIf(spacecraft -> spacecraft.getName().equals(name));
     }
-
-    // Method getHeaviestSpacecraft()– returns String the heaviest spacecraft by weight
-    // in the given launchpad in the following format:
-    // "{spaceCraft name} - {spaceCraft weight}kg."
 
     public String getHeaviestSpacecraft() {
         Spacecraft heaviestSpacecraft = Collections.max(spacecrafts, Comparator.comparing(Spacecraft::getWeight));
         return String.format("%s - %skg.", heaviestSpacecraft.getName(), heaviestSpacecraft.getWeight());
     }
 
-    // Method getSpacecraft(String name) – returns the spacecraft with the given name, otherwise – returns null
-
     public Spacecraft getSpacecraft(String name) {
        return spacecrafts.stream().filter(spacecraft -> spacecraft.getName().equals(name)).findFirst().orElse(null);
     }
 
-    // Method getCount() – returns the count of spacecrafts in the given launchpad
-
     public int getCount() {
         return this.spacecrafts.size();
     }
-
-    // Method getSpacecraftsByMissionType(String missionType) – returns List – a collection of Spacecraft
-    // which holds the spacecrafts having the same missionType in the given launchpad.
-    // In case there are no spacecrafts to respond to this condition (missionType) print:
-    //"There are no spacecrafts to respond this criteria."
 
     public List<Spacecraft> getSpacecraftsByMissionType(String missionType) {
 
@@ -94,19 +78,6 @@ public class LaunchPad {
         }
         return spacecraftList;
     }
-
-    /* Method getStatistics() – returns a String in the following format (print the spacecrafts in order of
-       addition):
-
-       "Spacecrafts launched from {launchpad name}:
-       1. {spacecraft name}
-       2. {spacecraft name}
-       (…)
-       n. {spacecraft name}"
-
-       If there are no spacecrafts in some launchpad print:
-       "Spacecrafts launched from {launchpad name}:
-       none" */
 
     public String getStatistics() {
         StringBuilder output = new StringBuilder("Spacecrafts launched from " + getName() + ":" + System.lineSeparator());

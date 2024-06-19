@@ -63,4 +63,5 @@ public class SoftUni {
                 .append(student.getBestCourse()).append(System.lineSeparator()));
         return output.toString();
     }
+
 }

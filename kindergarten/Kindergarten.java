@@ -72,4 +72,5 @@ public class Kindergarten {
                 .append(child).append(System.lineSeparator()));
         return output.toString();
     }
+
 }
