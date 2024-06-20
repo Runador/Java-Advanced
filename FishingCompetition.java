@@ -57,12 +57,15 @@ public class FishingCompetition {
         }
 
         if (collectedPassages >= 20) {
-            System.out.println("Success! You managed to reach the quota!\n");
+            System.out.println("Success! You managed to reach the quota!");
         } else {
             System.out.printf("You didn't catch enough fish and didn't reach the quota! " +
                     "You need %d tons of fish more.\n", 20 - collectedPassages);
         }
-        System.out.printf("Amount of fish caught: %d tons.\n", collectedPassages);
+        if (collectedPassages > 0) {
+            System.out.printf("Amount of fish caught: %d tons.\n", collectedPassages);
+        }
+
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
                 System.out.print(matrix[row][col]);
