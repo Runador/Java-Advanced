@@ -54,7 +54,6 @@ public class Cage {
             if (data.contains(parrot)) {
                 if (parrot.getName().equals(name)) {
                     parrot.setAvailable(false);
-                    data.remove(parrot);
                     return parrot;
                 }
             }
