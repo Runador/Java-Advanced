@@ -21,7 +21,7 @@ public class ClearSkies {
 
         String command = scanner.nextLine();
 
-        while (enemyCounter != 0) {
+        while (enemyCounter > 0) {
 
             protectedAirspace[jetFighterRow][jetFighterCol] = '-';
 
