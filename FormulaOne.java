@@ -42,7 +42,6 @@ public class FormulaOne {
             } else if (playerRow > matrix.length - 1) {
                 playerRow = 0;
             }
-
             if (playerCol < 0) {
                 playerCol = matrix.length - 1;
             } else if (playerCol > matrix.length - 1) {
@@ -128,6 +127,11 @@ public class FormulaOne {
             case "right" -> output = "right";
         }
         return output;
+    }
+
+    public boolean isInBounds(int playerRow, int playerCol, char[][] matrix) {
+        return playerRow >= 0 && playerRow < matrix.length &&
+                playerCol >= 0 && playerCol < matrix[playerRow].length;
     }
 
 }

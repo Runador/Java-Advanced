@@ -21,12 +21,12 @@ public class MonsterExtermination {
 
         while (!monstersArmorQueue.isEmpty() && !soldierStrikingImpactStack.isEmpty()) {
 
-            int armor = monstersArmorQueue.poll();
-            int soldierStrike = soldierStrikingImpactStack.pop();
+            Integer armor = monstersArmorQueue.poll();
+            Integer soldierStrike = soldierStrikingImpactStack.pop();
 
             if (soldierStrike >= armor) {
                 killedMonstersCounter++;
-                int soldier = Math.abs(soldierStrike - armor);
+                Integer soldier = Math.abs(soldierStrike - armor);
                 soldierStrikingImpactStack.push(soldierStrikingImpactStack.pop() + soldier);
             } else {
                 armor -= soldierStrike;
@@ -41,7 +41,6 @@ public class MonsterExtermination {
         if (!monstersArmorQueue.isEmpty()){
             System.out.println("The soldier has been defeated.");
         }
-
 
         System.out.printf("Total monsters killed: %d", killedMonstersCounter);
 
