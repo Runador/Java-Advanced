@@ -57,8 +57,7 @@ public class FormulaOne {
             }
 
             if (matrix[playerRow][playerCol] == 'B') {
-                // If the player steps on a bonus, he should move another step forward
-                // in the direction he is going.
+
                 switch (command) {
                     case "up" -> playerRow--;
                     case "down" -> playerRow++;
@@ -79,7 +78,7 @@ public class FormulaOne {
             }
 
             if (matrix[playerRow][playerCol] == 'T') {
-                // If the player steps on a trap, he should move a step backward.
+
                 switch (command) {
                     case "up" -> playerRow++;
                     case "down" -> playerRow--;
@@ -106,7 +105,6 @@ public class FormulaOne {
             System.out.println("Oh no, the player got lost on the track!");
             printMatrix(matrix);
         }
-
     }
 
     public static void printMatrix(char[][] matrix) {
@@ -117,22 +115,5 @@ public class FormulaOne {
             System.out.println();
         }
     }
-
-    public String currentCommand(String command) {
-        String output = "";
-        switch (command) {
-            case "up" -> output = "up";
-            case "down" -> output = "down";
-            case "left" -> output = "left";
-            case "right" -> output = "right";
-        }
-        return output;
-    }
-
-    public boolean isInBounds(int playerRow, int playerCol, char[][] matrix) {
-        return playerRow >= 0 && playerRow < matrix.length &&
-                playerCol >= 0 && playerCol < matrix[playerRow].length;
-    }
-
 }
 
