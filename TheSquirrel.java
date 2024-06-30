@@ -23,6 +23,7 @@ public class TheSquirrel {
         int sqCol = squirrelPosition[1];
 
         for (String command : commands) {
+
             field[sqRow][sqCol] = '*';
 
             switch (command) {
