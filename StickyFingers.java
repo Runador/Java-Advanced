@@ -12,7 +12,6 @@ public class StickyFingers {
         char[][] townArea = new char[size][size];
 
         String[] commands = scanner.nextLine().split(",");
-        int movementCommandsLength = commands.length;
 
         for (int r = 0; r < townArea.length; r++) {
             String line = scanner.nextLine().replaceAll("\\s+", "");
@@ -25,6 +24,8 @@ public class StickyFingers {
 
         for (String command : commands) {
 
+            boolean isLeaveTheTown = false;
+
             townArea[rows][cols] = '+';
 
             switch (command) {
@@ -36,15 +37,19 @@ public class StickyFingers {
 
             if (rows < 0) {
                 rows++;
-                System.out.println("You cannot leave the town, there is police outside!");
+                isLeaveTheTown = true;
             } else if (rows > townArea.length - 1) {
                 rows--;
-                System.out.println("You cannot leave the town, there is police outside!");
+                isLeaveTheTown = true;
             } else if (cols < 0) {
                 cols++;
-                System.out.println("You cannot leave the town, there is police outside!");
+                isLeaveTheTown = true;
             } else if (cols > townArea.length - 1) {
                 cols--;
+                isLeaveTheTown = true;
+            }
+
+            if (isLeaveTheTown) {
                 System.out.println("You cannot leave the town, there is police outside!");
             }
 
@@ -84,9 +89,9 @@ public class StickyFingers {
     }
 
     private static void printMatrix(char[][] matrix) {
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                System.out.print(matrix[row][col] + " ");
+        for (char[] row : matrix) {
+            for (char col : row) {
+                System.out.print(col + " ");
             }
             System.out.println();
         }
