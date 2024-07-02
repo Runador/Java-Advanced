@@ -1,4 +1,4 @@
-package person;
+package inheritanceexercises.person;
 
 public class Child extends Person {
 
