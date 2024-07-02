@@ -1,4 +1,4 @@
-package hierarchicalinheritance;
+package inheritancelab.hierarchicalinheritance;
 
 public class Dog extends Animal {
 

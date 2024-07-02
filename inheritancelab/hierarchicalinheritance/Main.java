@@ -1,4 +1,4 @@
-package hierarchicalinheritance;
+package inheritancelab.hierarchicalinheritance;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +10,5 @@ public class Main {
         Cat cat = new Cat();
         cat.eat();
         cat.meow();
-
     }
 }
