@@ -16,24 +16,12 @@ public class Student {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getBestSubject() {
         return bestSubject;
-    }
-
-    public void setBestSubject(String bestSubject) {
-        this.bestSubject = bestSubject;
     }
 
     @Override

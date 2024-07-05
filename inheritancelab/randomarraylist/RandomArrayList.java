@@ -1,18 +1,19 @@
 package inheritancelab.randomarraylist;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class RandomArrayList extends ArrayList {
 
+    private Random random = new Random();
+
     //  returns and removes a random element from the list.
     //    • Public method: getRandomElement(): Object
-    private List<Object> arrayList = new ArrayList<>();
 
     public Object getRandomElement() {
-        Random random = new Random();
-        return random.nextInt();
+        int index = this.random.nextInt(super.size());
+        Object element = super.get(index);
+        super.remove(index);
+        return element;
     }
-
 }

@@ -1,4 +1,4 @@
-package stackofstrings;
+package inheritancelab.stackofstrings;
 
 public class Main {
     public static void main(String[] args) {

@@ -17,16 +17,8 @@ public class University {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public List<Student> getStudents() {
         return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
     }
 
     public int getStudentCount() {
@@ -49,13 +41,11 @@ public class University {
     }
 
     public String dismissStudent(Student student) {
-        String output = "";
-        if (!students.isEmpty() && students.contains(student)) {
-            students.remove(student);
+        if (students.remove(student)) {
+            return student.toString() + " dismissed";
         } else {
-            output = "Student not found";
+            return "Student not found";
         }
-        return output;
     }
 
     public Student getStudent(String firstName, String lastName) {
