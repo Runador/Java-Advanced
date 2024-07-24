@@ -11,6 +11,10 @@ public class DecimalToBinary {
 
         ArrayDeque<Integer> stack = new ArrayDeque<>();
 
+        if (number == 0) {
+            System.out.println(0);
+        }
+
         while (number != 0) {
             int reminder = number % 2;
             stack.push(reminder);
