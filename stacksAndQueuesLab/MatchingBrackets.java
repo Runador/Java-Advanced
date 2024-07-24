@@ -18,13 +18,11 @@ public class MatchingBrackets {
             char symbol = expression.charAt(i);
 
             if (symbol == '(') {
-                int firstIndex = Integer.parseInt(String.valueOf(i));
-                indexesStack.push(firstIndex);
-            } else if (symbol == ')') {
-                int firstIndex = indexesStack.pop();
-                int secondIndex = i + 1;
-                String substring = expression.substring(firstIndex, secondIndex);
-                System.out.println(substring);
+                indexesStack.push(i);
+            }
+            if (symbol == ')') {
+                String subExpression = expression.substring(indexesStack.pop(), i + 1);
+                System.out.println(subExpression);
             }
 
         }
