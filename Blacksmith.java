@@ -37,27 +37,36 @@ public class Blacksmith {
                         } else {
                             swordsFinalMap.put("Gladius", 1);
                         }
-                    } else if (resources == 80) {
+                        steelQueue.poll();
+                        carbonStack.pop();
+                    }
+                    if (resources == 80) {
                         if (swordsFinalMap.containsKey("Shamshir")) {
                             swordsFinalMap.put("Shamshir", swordsFinalMap.get("Shamshir") + 1);
                         } else {
                             swordsFinalMap.put("Shamshir", 1);
                         }
-                    } else if (resources == 90) {
+                        steelQueue.poll();
+                        carbonStack.pop();
+                    }
+                    if (resources == 90) {
                         if (swordsFinalMap.containsKey("Katana")) {
                             swordsFinalMap.put("Katana", swordsFinalMap.get("Katana") + 1);
                         } else {
                             swordsFinalMap.put("Katana", 1);
                         }
-                    } else if (resources == 110) {
+                        steelQueue.poll();
+                        carbonStack.pop();
+                    }
+                    if (resources == 110) {
                         if (swordsFinalMap.containsKey("Sabre")) {
                             swordsFinalMap.put("Sabre", swordsFinalMap.get("Sabre") + 1);
                         } else {
                             swordsFinalMap.put("Sabre", 1);
                         }
+                        steelQueue.poll();
+                        carbonStack.pop();
                     }
-                    steelQueue.poll();
-                    carbonStack.pop();
                 }
                 if (!swordsMap.containsValue(steel + carbon)) {
                     isFailed = true;
