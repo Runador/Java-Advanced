@@ -46,7 +46,7 @@ public class Selling01 {
             if (matrix[pRow][pCol] == 'O') {
                 matrix[pRow][pCol] = '-';
                 pRow = sRow;
-                sRow = sCol;
+                pCol = sCol;
                 matrix[pRow][pCol] = 'S';
             }
 
