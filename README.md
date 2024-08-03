@@ -1,1 +1,1 @@
-This repоsitory contains projects from SoftUni Advanced module.
+This repоsitory contains projects from SoftUni Advanced module
