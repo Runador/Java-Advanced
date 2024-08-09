@@ -5,6 +5,7 @@ public class Bee {
         Scanner scanner = new Scanner(System.in);
 
         boolean isOutOfBounds = false;
+        boolean areMoreThenFivePolinatedFlowers = false;
         int pollinatedFlowers = 0;
 
         int n = Integer.parseInt(scanner.nextLine());
@@ -38,16 +39,53 @@ public class Bee {
                 break;
             }
 
+            if (matrix[bRow][bCol] == 'f') {
+                matrix[bRow][bCol] ='.';
+                pollinatedFlowers++;
+                if (pollinatedFlowers >= 5) {
+                    areMoreThenFivePolinatedFlowers = true;
+                }
+            }
+
             if (matrix[bRow][bCol] == 'O') {
+                matrix[bRow][bCol] ='.';
+                switch (command) {
+                    case "up" -> bRow--;
+                    case "down" -> bRow++;
+                    case "left" -> bCol--;
+                    case "right" -> bCol++;
+                }
+                if (bRow < 0 || bRow > matrix.length - 1 ||
+                        bCol < 0 || bCol > matrix.length - 1) {
+                    isOutOfBounds = true;
+                    break;
+                }
 
-                
+                if (matrix[bRow][bCol] == 'f') {
+                    matrix[bRow][bCol] ='.';
+                    pollinatedFlowers++;
+                    if (pollinatedFlowers >= 5) {
+                        areMoreThenFivePolinatedFlowers = true;
+                    }
+                }
 
+                matrix[bRow][bCol] = 'B';
             }
 
             matrix[bRow][bCol] = 'B';
 
             command = scanner.nextLine();
         }
+
+        if (isOutOfBounds) {
+            System.out.println("The bee got lost!");
+        }
+        if (areMoreThenFivePolinatedFlowers) {
+            System.out.printf("Great job, the bee manage to pollinate %d flowers!%n", pollinatedFlowers);
+        } else {
+            System.out.printf("The bee couldn't pollinate the flowers, she needed %d flowers more%n", 5 - pollinatedFlowers);
+        }
+        printMatrix(matrix);
     }
 
     private static int[] getPosition(char[][] matrix) {
