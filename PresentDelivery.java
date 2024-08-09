@@ -4,29 +4,29 @@ public class PresentDelivery {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int countOfPresents = Integer.parseInt(scanner.nextLine());
-        int size = Integer.parseInt(scanner.nextLine());
+        int m = Integer.parseInt(scanner.nextLine());
+        int n = Integer.parseInt(scanner.nextLine());
 
-        char[][] neighborhood = new char[size][size];
+        char[][] neighborhoodMatrix = new char[n][n];
 
-        for (int row = 0; row < neighborhood.length; row++) {
+        for (int row = 0; row < neighborhoodMatrix.length; row++) {
             String line = scanner.nextLine().replaceAll("\\s+", "");
-            neighborhood[row] = line.toCharArray();
+            neighborhoodMatrix[row] = line.toCharArray();
         }
 
-        int[] santaPosition = getSantaPosition(neighborhood);
+        int[] santaPosition = getSantaPosition(neighborhoodMatrix);
         int santaRow = santaPosition[0];
         int santaCol = santaPosition[1];
 
-        int niceChildrenCounter = getNiceChildrenCount(neighborhood);
-        int result = niceChildrenCounter - countOfPresents;
+        int niceChildrenCounter = getNiceChildrenCount(neighborhoodMatrix);
+        int result = niceChildrenCounter - m;
         boolean isRunOutOfPresents = false;
 
         String command = scanner.nextLine();
 
         while (!command.equals("Christmas morning")) {
 
-            neighborhood[santaRow][santaCol] = '-';
+            neighborhoodMatrix[santaRow][santaCol] = '-';
 
             switch (command) {
                 case "up" -> santaRow--;
@@ -35,53 +35,61 @@ public class PresentDelivery {
                 case "right" -> santaCol++;
             }
 
-            if (neighborhood[santaRow][santaCol] == 'V') {
-                countOfPresents--;
-                if (countOfPresents < niceChildrenCounter) {
+            if (neighborhoodMatrix[santaRow][santaCol] == 'X') {
+                // naughty kid
+
+            }
+
+            if (neighborhoodMatrix[santaRow][santaCol] == 'V') {
+                // nice kid
+                m--;
+                if (m < niceChildrenCounter) {
                     isRunOutOfPresents = true;
-                    neighborhood[santaRow][santaCol] = 'S';
+                    neighborhoodMatrix[santaRow][santaCol] = 'S';
                     break;
                 }
             }
 
-            if (neighborhood[santaRow][santaCol] == 'C') {
-                neighborhood[santaRow][santaCol] = 'S';
-                if (neighborhood[santaRow--][santaCol] == 'V' || neighborhood[santaRow--][santaCol] == 'X') {
-                    countOfPresents--;
+            if (neighborhoodMatrix[santaRow][santaCol] == 'C') {
+
+                neighborhoodMatrix[santaRow][santaCol] = 'S';
+
+                if (neighborhoodMatrix[santaRow--][santaCol] == 'V' || neighborhoodMatrix[santaRow--][santaCol] == 'X') {
+                    m--;
                     santaRow++;
-                    neighborhood[santaRow][santaCol] = '-';
+                    neighborhoodMatrix[santaRow][santaCol] = '-';
                     santaRow++;
                 }
-                if (neighborhood[santaRow++][santaCol] == 'V' || neighborhood[santaRow++][santaCol] == 'X') {
-                    countOfPresents--;
+                if (neighborhoodMatrix[santaRow++][santaCol] == 'V' || neighborhoodMatrix[santaRow++][santaCol] == 'X') {
+                    m--;
                     santaRow--;
-                    neighborhood[santaRow][santaCol] = '-';
+                    neighborhoodMatrix[santaRow][santaCol] = '-';
                     santaRow--;
                 }
-                if (neighborhood[santaRow][santaCol--] == 'V' || neighborhood[santaRow][santaCol--] == 'X') {
-                    countOfPresents--;
+                if (neighborhoodMatrix[santaRow][santaCol--] == 'V' || neighborhoodMatrix[santaRow][santaCol--] == 'X') {
+                    m--;
                     santaCol++;
-                    neighborhood[santaRow][santaCol] = '-';
+                    neighborhoodMatrix[santaRow][santaCol] = '-';
                     santaCol++;
                 }
-                if (neighborhood[santaRow][santaCol++] == 'V' || neighborhood[santaRow][santaCol++] == 'X') {
-                    countOfPresents--;
+                if (neighborhoodMatrix[santaRow][santaCol++] == 'V' || neighborhoodMatrix[santaRow][santaCol++] == 'X') {
+                    m--;
                     santaCol--;
-                    neighborhood[santaRow][santaCol] = '-';
+                    neighborhoodMatrix[santaRow][santaCol] = '-';
                     santaCol--;
                 }
             }
 
-            neighborhood[santaRow][santaCol] = 'S';
-
+            neighborhoodMatrix[santaRow][santaCol] = 'S';
             command = scanner.nextLine();
         }
 
         if (isRunOutOfPresents) {
             System.out.println("Santa ran out of presents!");
         }
-        printMatrix(neighborhood);
-        if (countOfPresents < niceChildrenCounter) {
+        printMatrix(neighborhoodMatrix);
+
+        if (m < niceChildrenCounter) {
             System.out.printf("No presents for %d nice kid/s.", result);
         } else {
             System.out.printf("Good job, Santa! %d happy nice kid/s.", niceChildrenCounter);
