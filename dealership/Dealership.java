@@ -65,6 +65,6 @@ public class Dealership {
     public String getStatistics() {
         StringBuilder output = new StringBuilder("The cars are in a car dealership " + this.name).append("\n");
         data.forEach(car -> output.append(car).append("\n"));
-        return output.toString();
+        return output.toString().trim();
     }
 }
