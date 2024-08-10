@@ -1,4 +1,4 @@
-package dealership;
+package parking;
 
 public class Car {
 
@@ -41,3 +41,4 @@ public class Car {
         return String.format("%s %s (%d)", this.manufacturer, this.model, this.year);
     }
 }
+

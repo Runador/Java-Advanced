@@ -1,16 +1,16 @@
-package dealership;
+package parking;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Dealership {
+public class Parking {
 
     public ArrayList<Car> data;
-    public String name;
+    public String type;
     public int capacity;
 
-    public Dealership(String name, int capacity) {
-        this.name = name;
+    public Parking(String type, int capacity) {
+        this.type = type;
         this.capacity = capacity;
         data = new ArrayList<>();
     }
@@ -23,12 +23,12 @@ public class Dealership {
         this.data = data;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getCapacity() {
@@ -45,7 +45,7 @@ public class Dealership {
         }
     }
 
-    public boolean buy(String manufacturer, String model) {
+    public boolean remove(String manufacturer, String model) {
         return data.removeIf(car -> car.manufacturer.equals(manufacturer) && car.model.equals(model));
     }
 
@@ -63,7 +63,7 @@ public class Dealership {
     }
 
     public String getStatistics() {
-        StringBuilder output = new StringBuilder("The cars are in a car dealership " + this.name).append("\n");
+        StringBuilder output = new StringBuilder("The cars are in a car dealership " + this.type).append("\n");
         data.forEach(car -> output.append(car).append("\n"));
         return output.toString().trim();
     }

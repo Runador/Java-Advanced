@@ -1,9 +1,10 @@
-package dealership;
+package parking;
 
 public class Main {
     public static void main(String[] args) {
+
         // Initialize the repository
-        Dealership dealership = new Dealership("Autofest", 5);
+        Parking parking = new Parking("Underground parking garage", 5);
 
         // Initialize entity
         Car volvo = new Car("Volvo", "XC70", 2010);
@@ -12,32 +13,32 @@ public class Main {
         System.out.println(volvo); // Volvo XC70 (2010)
 
         // Add Car
-        dealership.add(volvo);
+        parking.add(volvo);
 
         // Remove Car
-        System.out.println(dealership.buy("Volvo", "XC90")); // false
-        System.out.println(dealership.buy("Volvo", "XC70")); // true
+        System.out.println(parking.remove("Volvo", "XC90")); // false
+        System.out.println(parking.remove("Volvo", "XC70")); // true
 
         Car peugeot = new Car("Peugeot", "307", 2011);
         Car audi = new Car("Audi", "S4", 2005);
 
-        dealership.add(peugeot);
-        dealership.add(audi);
+        parking.add(peugeot);
+        parking.add(audi);
 
         // Get Latest Car
-        Car latestCar = dealership.getLatestCar();
+        Car latestCar = parking.getLatestCar();
         System.out.println(latestCar); // Peugeot 307 (2011)
 
         // Get Car
-        Car audiS4 = dealership.getCar("Audi", "S4");
+        Car audiS4 = parking.getCar("Audi", "S4");
         System.out.println(audiS4); // Audi S4 (2005)
 
         // Count
-        System.out.println(dealership.getCount()); // 2
+        System.out.println(parking.getCount()); // 2
 
         // Get Statistics
-        System.out.println(dealership.getStatistics());
-        // The cars are in a car dealership Autofest:
+        System.out.println(parking.getStatistics());
+        // The cars are parked in Underground parking garage:
         // Peugeot 307 (2011)
         // Audi S4 (2005)
     }
