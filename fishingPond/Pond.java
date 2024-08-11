@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Pond {
 
-    private int capacity;
+    /*private int capacity;
     private List<Fish> fishes;
 
     public Pond(int capacity) {
@@ -22,13 +22,13 @@ public class Pond {
     }
 
     public boolean removeFish(String species) {
-        /*for (Fish fish : data) {
+        *//*for (Fish fish : data) {
             if (data.contains(fish) && fish.getSpecies().equals(species)) {
                 data.remove(fish);
                 return true;
             }
         }
-        return false;*/
+        return false;*//*
         return fishes.removeIf(fish -> fish.getSpecies().equals(species));
     }
 
@@ -37,12 +37,12 @@ public class Pond {
     }
 
     public Fish getFish(String species) {
-        /*for (Fish fish : fishes) {
+        *//*for (Fish fish : fishes) {
             if (fishes.contains(fish) && fish.getSpecies().equals(species)) {
                 return fish;
             }
         }
-        return null;*/
+        return null;*//*
         return fishes.stream().filter(fish -> fish.getSpecies().equals(species))
                 .findFirst().orElse(null);
     }
@@ -62,6 +62,6 @@ public class Pond {
                     fish.getSpecies(), fish.getAge(), fish.getMatingSeason()));
         }
         return output.toString();
-    }
+    }*/
 
 }

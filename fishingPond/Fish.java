@@ -2,7 +2,7 @@ package examPreparation13December2023.fishingPond;
 
 public class Fish {
 
-    private String species;
+    /*private String species;
     private int age;
     private String matingSeason;
 
@@ -40,5 +40,5 @@ public class Fish {
         return String.format("This %s is %d years old and reproduces through %s.",
                 getSpecies(), getAge(), getMatingSeason());
     }
-
+*/
 }

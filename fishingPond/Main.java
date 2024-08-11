@@ -1,7 +1,7 @@
-package examPreparation13December2023.fishingPond;
+package fishingPond;
 
 public class Main {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         //Initialize the repository (Pond)
         Pond pond = new Pond(5);
@@ -36,5 +36,5 @@ public class Main {
         // This Perch is 2 years old and reproduces through summer.
         // This Pike is 4 years old and reproduces through spring.
         // This Catfish is 8 years old and reproduces through summer.
-    }
+    }*/
 }
