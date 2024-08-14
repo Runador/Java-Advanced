@@ -4,9 +4,12 @@ public class FoodFinder {
     /*public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayDeque<Character> vowelsQueue = new ArrayDeque<>();
+        ArrayDeque<String> vowelsQueue = new ArrayDeque<>();
 
-        vowelsQueue = Arrays.scanner.nextLine().split("\\s+").forEach(vowelsQueue::offer);
+        String line = scanner.nextLine().replaceAll("\\s+", "");
+        char[] arrayLine = line.toCharArray();
+
+        Arrays.stream(arrayLine(vowelsQueue.offer(String.valueOf(arrayLine))));
 
         ArrayDeque<Character> consonantsStack = new ArrayDeque<>();
 

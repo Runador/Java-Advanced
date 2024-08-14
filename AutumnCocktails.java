@@ -69,9 +69,11 @@ public class AutumnCocktails {
             } else {
                 freshnessLevelStack.pop();
                 ingredient += 5;
-                ingredientsQueue.poll();
                 if (ingredient > 0) {
+                    ingredientsQueue.poll();
                     ingredientsQueue.addLast(ingredient);
+                } else if (ingredient == 0) {
+                    ingredientsQueue.poll();
                 }
             }
         }
@@ -85,8 +87,10 @@ public class AutumnCocktails {
         }
 
         int remainingIngredientsSum = ingredientsQueue.stream().mapToInt(Integer::intValue).sum();
-        
-        System.out.printf("Ingredients left: %d%n", remainingIngredientsSum);
+
+        if (remainingIngredientsSum > 0) {
+            System.out.printf("Ingredients left: %d%n", remainingIngredientsSum);
+        }
 
         if (!cocktailsMap.isEmpty()) {
             for (Map.Entry<String, Integer> entry : cocktailsMap.entrySet()) {
