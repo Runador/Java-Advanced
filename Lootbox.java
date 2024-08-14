@@ -28,8 +28,7 @@ public class Lootbox {
                 firstLootBoxQueue.poll();
                 secondLootBoxStack.pop();
             } else {
-                secondLootBoxStack.pop();
-                firstLootBoxQueue.addLast(secondLootBox);
+                firstLootBoxQueue.addLast(secondLootBoxStack.pop());
             }
         }
 
