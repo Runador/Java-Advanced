@@ -28,7 +28,7 @@ public class FilterByAge {
                 younger.add(entry.getValue());
                 Optional<Integer> y = younger.stream().max(Comparator.comparing(Integer::intValue));
                 System.out.println(y);
-                younger.stream().filter(e -> e % 2 == 0).mapToInt()
+                // younger.stream().filter(e -> e % 2 == 0).mapToInt()
             } else if (condition.equals("older")) {
 
             }
