@@ -1,9 +1,6 @@
 package functionalprogramming;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
 
 public class FilterByAge {
     public static void main(String[] args) {
