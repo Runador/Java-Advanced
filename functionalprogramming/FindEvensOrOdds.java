@@ -13,18 +13,15 @@ public class FindEvensOrOdds {
 
         String command = scanner.nextLine();
 
+        Predicate<Integer> odd = i -> i % 2 != 0;
+        Predicate<Integer> even = i -> i % 2 == 0;
+
         for (int i = lower; i <= upper; i++) {
-            if (command.equals("even")) {
-                if (i % 2 == 0) {
-                    System.out.printf("%d ", i);
-                }
-            } else if (command.equals("odd")) {
-                if (i % 2 != 0) {
-                    System.out.printf("%d ", i);
-                }
+            if (command.equals("odd") && odd.test(i)) {
+                System.out.print(i + " ");
+            } else if (command.equals("even") && even.test(i)) {
+                System.out.print(i + " ");
             }
         }
-        // Predicate<Integer> first =
-
     }
 }

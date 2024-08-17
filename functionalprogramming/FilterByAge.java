@@ -1,6 +1,8 @@
 package functionalprogramming;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class FilterByAge {
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class FilterByAge {
             String[] pairs = scanner.nextLine().split(", ");
             String name = pairs[0];
             int age = Integer.parseInt(pairs[1]);
+
             if (!people.containsKey(name)) {
                 people.put(name, age);
             }
@@ -22,19 +25,27 @@ public class FilterByAge {
         int age = Integer.parseInt(scanner.nextLine());
         String[] format = scanner.nextLine().split(" ");
 
+        Predicate<Integer> younger = x -> x <= age;
+        Predicate<Integer> older = x -> x >= age;
+
         for (var entry : people.entrySet()) {
-            if (condition.equals("younger")) {
-                List<Integer> younger = new ArrayList<>();
-                younger.add(entry.getValue());
-                Optional<Integer> y = younger.stream().max(Comparator.comparing(Integer::intValue));
-                System.out.println(y);
-                // younger.stream().filter(e -> e % 2 == 0).mapToInt()
-            } else if (condition.equals("older")) {
-
+            if (condition.equals("younger") && younger.test(entry.getValue())) {
+                if (format.length == 2) {
+                    System.out.printf("%s - %d%n", entry.getKey(), entry.getValue());
+                } else if (format[0].equals("name")) {
+                    System.out.printf("%s%n", entry.getKey());
+                } else if (format[0].equals("age")) {
+                    System.out.printf("%d%n", entry.getValue());
+                }
+            } else if (condition.equals("older") && older.test(entry.getValue())) {
+                if (format.length == 2) {
+                    System.out.printf("%s - %d%n", entry.getKey(), entry.getValue());
+                } else if (format[0].equals("name")) {
+                    System.out.printf("%s%n", entry.getKey());
+                } else if (format[0].equals("age")) {
+                    System.out.printf("%d%n", entry.getValue());
+                }
             }
-
         }
-
-
     }
 }
