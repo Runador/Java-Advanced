@@ -25,7 +25,7 @@ public class AppliedArithmetic {
                 case "add" -> numbers = add.apply(numbers);
                 case "subtract" -> numbers = subtract.apply(numbers);
                 case "multiply" -> numbers = multiply.apply(numbers);
-                case "print" -> numbers.forEach(e -> System.out.print(e + " "));
+                case "print" -> { numbers.forEach(e -> System.out.print(e + " ")); System.out.println(); }
             }
 
             command = scanner.nextLine();
