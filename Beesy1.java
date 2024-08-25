@@ -1,3 +1,4 @@
+/*
 import java.util.Scanner;
 
 public class Beesy1 {
@@ -112,3 +113,4 @@ public class Beesy1 {
     }
 
 }
+*/

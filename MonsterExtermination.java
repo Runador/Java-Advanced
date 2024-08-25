@@ -1,3 +1,4 @@
+/*
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -6,8 +7,10 @@ public class MonsterExtermination {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        /*  20,15,10
-            5,15,10,25*/
+        */
+/*  20,15,10
+            5,15,10,25*//*
+
 
         ArrayDeque<Integer> monstersArmorQueue = new ArrayDeque<>();
         Arrays.stream(scanner.nextLine().split(",")).mapToInt(Integer::parseInt)
@@ -47,3 +50,4 @@ public class MonsterExtermination {
     }
 
 }
+*/

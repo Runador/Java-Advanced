@@ -14,8 +14,6 @@ public class ConsumerPrint {
 
         Consumer<String> stringConsumer = e -> System.out.println(e);
         input.forEach(stringConsumer);
-
-
     }
 }
 
