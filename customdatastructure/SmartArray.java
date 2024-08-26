@@ -1,6 +1,5 @@
 package customdatastructure;
 
-import java.util.Arrays;
 import java.util.function.Consumer;
 
 public class SmartArray {
@@ -47,8 +46,10 @@ public class SmartArray {
         return 0;
     }
 
-    public void forEach() {
-        Arrays.stream(array).forEach(e -> System.out.print(e + " "));
+    public void forEach(Consumer<Integer> consumer) {
+        for (int j : array) {
+            consumer.accept(j);
+        }
     }
 
     public boolean contains(int element) {
@@ -60,7 +61,21 @@ public class SmartArray {
         return false;
     }
 
-    public void add(int index, int element) {
+    // Adds element at the specific index, the element at this index gets shifted
+    // to the right alongside any following elements, increasing the size
 
+    public void add(int index, int element) {
+        if (index >= 0 && index < array.length - 1) {
+            for (int i = 0; i < array.length; i++) {
+                if (i == index) {
+                    int[] newArray = new int[array.length - index];
+                    for (int j = 0; j < newArray.length; j++) {
+                        
+                    }
+                    array[i] = element;
+                }
+            }
+        }
     }
+
 }
