@@ -70,7 +70,7 @@ public class SmartArray {
                 if (i == index) {
                     int[] newArray = new int[array.length - index];
                     for (int j = 0; j < newArray.length; j++) {
-                        
+                        array[i] = newArray[j];
                     }
                     array[i] = element;
                 }
