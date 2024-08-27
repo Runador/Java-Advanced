@@ -15,15 +15,24 @@ public class FindTheSmallestElement {
 
     public static int getMinIndex(List<Integer> numbers) {
         int index = 0;
+        int counter = 1;
+        int rightMost = 0;
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < numbers.size(); i++) {
             int number = numbers.get(i);
             if (number < min) {
                 min = number;
                 index = i;
+            } else if (number == min) {
+                counter++;
+                rightMost = i;
             }
         }
-        return index;
+        if (counter > 1) {
+            return rightMost;
+        } else {
+            return index;
+        }
     }
 
 }
