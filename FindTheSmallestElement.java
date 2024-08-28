@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FindTheSmallestElement {
@@ -10,7 +9,6 @@ public class FindTheSmallestElement {
                 .map(Integer::parseInt).collect(Collectors.toList());
 
         System.out.println(getMinIndex(numbers));
-
     }
 
     public static int getMinIndex(List<Integer> numbers) {
