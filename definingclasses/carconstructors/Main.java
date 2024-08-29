@@ -13,6 +13,5 @@ public class Main {
         int horsePower = Integer.parseInt(scanner.nextLine());
         Car car2 = new Car(brand, model, horsePower);
         System.out.println(car2.carInfo());
-
     }
 }
