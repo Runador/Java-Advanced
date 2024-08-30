@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class PredicateParty {
     public static void main(String[] args) {
@@ -17,11 +18,10 @@ public class PredicateParty {
                 String command = data[1];
                 String subString = data[2];
                 Function<List<String>, List<String>> functionDouble = stringList -> stringList.stream()
-                        .filter(s -> s.length() == Integer.parseInt(subString)).map(stringList.add())
+                        .filter(s -> s.length() == Integer.parseInt(subString))
+                        .collect(Collectors.toList());
                 switch (command) {
                     case "StartsWith" -> names.stream().filter(e -> e.startsWith(subString))
-                            .map()
-                    )
                     case "EndsWith" -> names.removeIf(e -> e.endsWith(subString));
                     case "Length" -> names.removeIf(e -> e.length() == Integer.parseInt(subString));
                 }
