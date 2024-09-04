@@ -19,7 +19,7 @@ public class Main {
             String name = data[0];
             double salary = Double.parseDouble(data[1]);
             String position = data[2];
-            String department = data[3];
+            String departmentName = data[3];
             String email = "n/a";
             int age = -1;
             if (data.length == 6) {
@@ -33,8 +33,9 @@ public class Main {
                 }
             }
 
-            Employee employee = new Employee(name, salary, position, department, email, age);
-            employees.add(employee);
+            Employee employee = new Employee(name, salary, position, departmentName, email, age);
+            /*Department department = getDepartmentByName(departments, departmentName);*/
+
         }
 
         // calculates the department with the highest average salary, and prints for each employee in that department
