@@ -14,7 +14,6 @@ public class Car {
         this.color = color;
     }
 
-    public Car(String model, )
     public String getModel() {
         return model;
     }
