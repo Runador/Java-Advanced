@@ -26,23 +26,11 @@ public class Engine {
         return power;
     }
 
-    public void setPower(int power) {
-        this.power = power;
-    }
-
     public String getDisplacement() {
         return displacement;
     }
 
-    public void setDisplacement(String displacement) {
-        this.displacement = displacement;
-    }
-
     public String getEfficiency() {
         return efficiency;
-    }
-
-    public void setEfficiency(String efficiency) {
-        this.efficiency = efficiency;
     }
 }

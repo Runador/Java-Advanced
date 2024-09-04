@@ -30,14 +30,6 @@ public class Car {
         this.engine = engine;
     }
 
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
     public String getColor() {
         return color;
     }
