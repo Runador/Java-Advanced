@@ -4,10 +4,10 @@ public class Car {
 
     private String model;
     private Engine engine;
-    private int weight;
+    private String weight;
     private String color;
 
-    public Car(String model, Engine engine, int weight, String color) {
+    public Car(String model, Engine engine, String weight, String color) {
         this.model = model;
         this.engine = engine;
         this.weight = weight;
@@ -30,11 +30,11 @@ public class Car {
         this.engine = engine;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
@@ -44,5 +44,14 @@ public class Car {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s:\n%s:\nPower: %d\nDisplacement: %s\n" +
+                        "Efficiency: %s\nWeight: %s\nColor: %s",
+                model, getEngine().getModel(), getEngine().getPower(),
+                getEngine().getDisplacement(), getEngine().getEfficiency(),
+                weight, color);
     }
 }
