@@ -1,5 +1,8 @@
 package hierarchicalinheritance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Animal animal = new Animal();
@@ -20,5 +23,9 @@ public class Main {
         dog1.eat();
         System.out.println();
         cat1.eat();
+        List<Animal> animals = new ArrayList<>();
+        animals.add(animal);
+        animals.add(dog);
+        animals.add(cat);
     }
 }
