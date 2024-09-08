@@ -43,7 +43,7 @@ public class Main {
         }
 
         for (Animal animal : animals) {
-            System.out.printf("%s%n%s %d %s%n", animal, animal.getName(), animal.getAge(), animal.getGender());
+            System.out.printf("%s%n%s %d %s%n", animal.toString(), animal.getName(), animal.getAge(), animal.getGender());
             System.out.println(animal.produceSound());
         }
     }
