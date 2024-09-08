@@ -21,7 +21,6 @@ public class Audi extends CarImpl implements Rentable {
 
     @Override
     public String toString() {
-
         return super.toString() + "Minimum rental period of %d days. Price per day %f".formatted(minRentDay, pricePerDay);
     }
 }
