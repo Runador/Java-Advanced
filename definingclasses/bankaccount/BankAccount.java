@@ -10,14 +10,15 @@ public class BankAccount {
 
     public BankAccount() {
         this.id = bankAccountCount++;
+        setInterestRate(DEFAULT_INTEREST_RATE);
     }
 
     public static void setInterestRate(double interest) {
-        BankAccount.interestRate = interest;
+        interestRate = interest;
     }
 
     public double getInterest(int years) {
-        return BankAccount.interestRate * years * this.balance;
+        return interestRate * years * balance;
     }
 
     public void deposit(double amount) {
@@ -25,6 +26,6 @@ public class BankAccount {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 }
