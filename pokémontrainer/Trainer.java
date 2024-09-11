@@ -11,8 +11,8 @@ public class Trainer {
 
     public Trainer(String name) {
         this.name = name;
-        this.numberOfBadges = 0;
-        pokemons = new ArrayList<>();
+        setNumberOfBadges(0);
+        this.pokemons = new ArrayList<>();
     }
 
     public String getName() {
@@ -23,7 +23,15 @@ public class Trainer {
         return numberOfBadges;
     }
 
+    private void setNumberOfBadges(int numberOfBadges) {
+        this.numberOfBadges = numberOfBadges;
+    }
+
     public List<Pokemon> getPokemons() {
         return pokemons;
+    }
+
+    public void addPokemon(Pokemon pokemon) {
+        pokemons.add(pokemon);
     }
 }

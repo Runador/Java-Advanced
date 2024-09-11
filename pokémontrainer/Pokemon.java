@@ -23,4 +23,8 @@ public class Pokemon {
     public int getHealth() {
         return health;
     }
+
+    public void loseHealth() {
+        health -= 10;
+    }
 }

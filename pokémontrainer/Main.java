@@ -7,22 +7,40 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        List<Pokemon> pokemons = new ArrayList<>();
-        Map<Trainer, List<Pokemon>> mapOfTrainers = new LinkedHashMap<>();
+        Set<String> trainersNames = new LinkedHashSet<>();
+        Map<Trainer, List<Pokemon>> trainerMap = new LinkedHashMap<>();
 
         String input = scanner.nextLine();
 
         while (!input.equals("Tournament")) {
 
-            // "{TrainerName} {PokemonName} {PokemonElement} {PokemonHealth}"
             String[] data = input.split("\\s+");
-            Trainer trainer = new Trainer(data[0]);
+
+            String trainerName = data[0];
+
+            trainersNames.add(trainerName);
+
             Pokemon pokemon = new Pokemon(data[1], data[2], Integer.parseInt(data[3]));
-            pokemons.add(pokemon);
-            mapOfTrainers.putIfAbsent(trainer, pokemons);
+
+            if (trainerName.equals())
+
 
             input = scanner.nextLine();
         }
+        System.out.println();
+        input = scanner.nextLine();
 
+        /*while (!input.equals("End")) {
+            String command = input;
+            switch (command) {
+                case "Fire" -> {
+                    mapOfTrainers.get()
+                }
+                        case "Electricity" ->
+                                case "Water" ->
+            }
+
+            input = scanner.nextLine();
+        }*/
     }
 }
