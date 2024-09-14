@@ -23,7 +23,7 @@ public class Trainer {
         return numberOfBadges;
     }
 
-    private void setNumberOfBadges(int numberOfBadges) {
+    public void setNumberOfBadges(int numberOfBadges) {
         this.numberOfBadges = numberOfBadges;
     }
 

@@ -27,47 +27,15 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void addPokemon(Pokemon pokemon) {
+        this.pokemons.add(pokemon);
     }
 
-    public Company getCompany() {
-        return company;
+    public void addParent(Parent parent) {
+        this.parents.add(parent);
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public List<Pokemon> getPokemons() {
-        return pokemons;
-    }
-
-    public void setPokemons(List<Pokemon> pokemons) {
-        this.pokemons = pokemons;
-    }
-
-    public List<Parent> getParents() {
-        return parents;
-    }
-
-    public void setParents(List<Parent> parents) {
-        this.parents = parents;
-    }
-
-    public List<Child> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
+    public void addChild(Child child) {
+        this.children.add(child);
     }
 }

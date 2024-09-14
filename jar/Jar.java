@@ -1,11 +1,11 @@
-package Jar;
+package jar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Jar<T> {
 
-    private final List<T> list;
+    private List<T> list;
 
     public Jar() {
         this.list = new ArrayList<>();
@@ -13,10 +13,6 @@ public class Jar<T> {
 
     public void add(T element) {
         list.add(element);
-    }
-
-    public int size() {
-        return this.list.size();
     }
 
     public T remove() {
