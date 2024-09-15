@@ -2,13 +2,13 @@ package genericbox;
 
 public class Box<T> {
 
-    private T output;
+    private T value;
 
-    public Box(T output) {
-        this.output = output;
+    public Box(T value) {
+        this.value = value;
     }
 
     public String toString() {
-        return "java.lang.String: %s".formatted(output);
+        return "%s: %s".formatted(value.getClass().getName(), value);
     }
 }
