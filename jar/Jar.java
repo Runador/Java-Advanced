@@ -1,21 +1,20 @@
 package jar;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayDeque;
 
 public class Jar<T> {
 
-    private List<T> list;
+    private ArrayDeque<T> stack;
 
     public Jar() {
-        this.list = new ArrayList<>();
+        this.stack = new ArrayDeque<>();
     }
 
     public void add(T element) {
-        list.add(element);
+        stack.push(element);
     }
 
     public T remove() {
-        return list.remove(list.size() - 1);
+        return stack.pop();
     }
 }
